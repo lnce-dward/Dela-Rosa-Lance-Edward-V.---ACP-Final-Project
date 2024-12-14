@@ -33,13 +33,6 @@ The **Mirai Health Tracker** is a Python-based application designed to promote b
 - Promotes healthier lifestyles through mental and physical health monitoring.
 - Empowers individuals to manage stress, improve fitness, and achieve wellness goals.
 
-### 2. Goal 10: Reduced Inequalities
-- Provides an inclusive and accessible platform for users of all demographics.
-- Encourages mental health awareness and accessibility to wellness tools.
-
-### 3. Goal 12: Responsible Consumption and Production
-- Tracks dietary habits to encourage mindful and sustainable food choices.
-
 ## Technical Details
 - **Programming Language**: Python
 - **Libraries and Frameworks**:
@@ -50,7 +43,6 @@ The **Mirai Health Tracker** is a Python-based application designed to promote b
   - `login.py`: Handles user authentication and redirection to the dashboard.
   - `register.py`: Manages new user registration.
   - `dashboard.py`: Provides the main interface for health tracking.
-  - `database.py`: Contains the database logic and queries.
 
 ## Installation and Usage
 ### Prerequisites
