@@ -52,7 +52,7 @@ The **Mirai Health Tracker** is a Python-based application designed to promote b
 
 ### Setup
 1. Clone the repository or download the source files.
-2. Configure the MySQL database using the provided `database.sql` file.
+2. Configure the MySQL database using the provided `mirai_db.sql` file.
 3. Install required Python libraries using:
    ```bash
    pip install -r requirements.txt
