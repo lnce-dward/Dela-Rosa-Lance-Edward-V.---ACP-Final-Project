@@ -4,7 +4,7 @@ from tkinter import messagebox
 import subprocess
 import bcrypt
 import sys
-
+import os
 
 # Establish a connection to the database
 def get_db_connection():
@@ -12,8 +12,8 @@ def get_db_connection():
         print("Attempting to connect to the database...")  # Debug log
         connection = mysql.connector.connect(
             host="localhost",
-            user="root",  
-            password="",  
+            user="root",  # Replace with your database username
+            password="",  # Replace with your database password
             database="MIRAI_DB"
         )
         return connection
@@ -40,18 +40,18 @@ def sign_in():
 
         cursor = connection.cursor()
 
-        # Query to fetch hashed password for the username
-        cursor.execute("SELECT password FROM User_TB WHERE username = %s", (username,))
+        # Query to fetch hashed password and user_id for the username
+        cursor.execute("SELECT password, user_id FROM User_TB WHERE username = %s", (username,))
         result = cursor.fetchone()
 
         if result is None:
             messagebox.showerror("Invalid Credentials", "Username not found.")
             return
-
-        stored_password = result[0]
+    
+        stored_password, user_id = result
         if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
             print('Login Successful')
-            open_dashboard()
+            open_dashboard(user_id)  # Pass the user_id to the dashboard
         else:
             messagebox.showerror("Invalid Credentials", "Username or password is incorrect")
 
@@ -122,7 +122,7 @@ heading = Label(frame, text='Sign in', fg='#bc6c25', bg='white', font=('Microsof
 heading.place(x=100, y=5)
 
 # User input field for username
-user = Entry(frame, width=25, fg='black', border=0, bg="white", font=('Microsoft YaHei UI Light', 11))
+user =                                                                                                                                                                                                       Entry(frame, width=25, fg='black', border=0, bg="white", font=('Microsoft YaHei UI Light', 11))
 user.place(x=30, y=80)
 user.insert(0, 'Username')
 user.bind('<FocusIn>', on_enter)
@@ -146,17 +146,19 @@ label.place(x=75, y=270)
 
 
 def open_registration():
-    login.destroy()
-    subprocess.Popen([sys.executable, "register.py"])
+    login.withdraw()  # Close the login window
+    subprocess.run([sys.executable, "register.py"])  # Open the registration script
+    subprocess.run([sys.executable, sys.argv[0]])  # Relaunch the login script after registration
 
-
-def open_dashboard():
-    login.destroy()
-    subprocess.Popen([sys.executable, 'dashboard.py'])
+# Fetch user_id after login and pass it to the Dashboard
+def open_dashboard(user_id):
+    # Destroy or close the login window
+    login.destroy()  # Ensure the login window closes
+    # Launch the dashboard script, passing the user_id if needed
+    subprocess.run([sys.executable, 'dashboard.py', str(user_id)]) 
 
 
 sign_up = Button(frame, width=6, text='Sign Up', border=0, bg='white', cursor='hand2', fg='#d4a373',
                  command=open_registration)
 sign_up.place(x=215, y=270)
-
 login.mainloop()
