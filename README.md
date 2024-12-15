@@ -73,8 +73,8 @@ matplotlib>=3.7.0
 ### Installation Guide
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/mirai-health-tracker.git
-   cd mirai-health-tracker
+   git clone https://github.com/lnce-dward/Dela-Rosa-Lance-Edward-V.---ACP-Final-Project.git
+   cd Dela-Rosa-Lance-Edward-V.---ACP-Final-Project
    ```
 
 2. Install required packages:
