@@ -1,58 +1,80 @@
-# Mirai Health Tracker
+# Health Tracking System
 
-## Project Overview
-The **Mirai Health Tracker** is a Python-based application designed to promote better mental and physical health through data-driven insights and easy-to-use tracking tools. This application provides an interactive dashboard for users to log and monitor their health metrics, set personal goals, and reflect on mental health conditions and lifestyle choices. By leveraging technology, it aims to empower individuals to take control of their well-being and make informed decisions.
+## Introduction
+
+The Health Tracking System is designed to help individuals monitor and improve their physical and mental health. It provides a user-friendly platform where users can track key health metrics, including weight, BMI, blood pressure, heart rate, stress levels, mood, and more. The system is built using Object-Oriented Programming principles, ensuring maintainability, reusability, and scalability.
+
+This project addresses the **Sustainable Development Goal (SDG) 3: Good Health and Well-being** by encouraging individuals to take control of their health and make informed decisions based on real-time data. By using the system, users can monitor their physical health progress, manage stress, and track their mood, ultimately promoting overall well-being.
+
+## Technologies
+
+- **Java**: Core language for implementing the system.
+- **Object-Oriented Programming (OOP)**: Applied to create modular, maintainable, and reusable code.
+- **IntelliJ IDEA**: Recommended IDE for building and running the project.
 
 ## Features
-### 1. Login and Registration System
-- Secure login with encrypted passwords using `bcrypt`.
-- Simple registration interface.
 
-### 2. Dashboard
-- A user-friendly graphical interface using `CustomTkinter`.
-- Sidebar tabs for seamless navigation between features:
-  - **Mental Health**: Journaling, mood tracking, stress levels, and cognitive exercises.
-  - **Physical Health**: BMI calculator, activity and diet tracker, health metrics.
-  - **Profile**: Editable personal information and health summary.
+- **User Registration and Login**: Allows users to create an account, log in, and securely store personal health data.
+- **Physical Health Tracking**: Users can input and track their weight, height, blood pressure, heart rate, and calculate BMI.
+- **Mental Health Tracking**: Users can log their mood, stress levels, and track cognitive well-being.
+- **Health History**: Displays a history of previous health entries and allows users to view their progress over time.
 
-### 3. Database Integration
-- Powered by MySQL for robust data management.
-- Tracks user profiles, health metrics, and historical data for insights.
+## SDG Integration
 
-### 4. Health Insights and History
-- Daily and historical health data visualization.
-- Personalized recommendations based on user inputs.
+The system is aligned with **SDG 3: Good Health and Well-being**, which emphasizes the importance of promoting healthy lives and well-being for all at all ages. This project supports this goal by providing a platform for individuals to monitor and improve their physical and mental health, ultimately leading to better health outcomes.
 
-### 5. Interactive Features
-- Activity tracker for fitness goals.
-- Diet tracker for calorie and meal tracking.
-- Stress and mood tracking to enhance mental resilience.
+### How SDG 3 is addressed:
+- **Physical Health Monitoring**: Users can track key physical health metrics such as weight, BMI, and blood pressure, enabling them to manage their physical well-being effectively.
+- **Mental Health Support**: By tracking mood and stress levels, the system helps users better understand and manage their mental health.
+- **Access to Health Data**: The system encourages users to regularly assess their health data, promoting proactive health management.
 
-## SDGs Addressed
-### 1. Goal 3: Good Health and Well-being
-- Promotes healthier lifestyles through mental and physical health monitoring.
-- Empowers individuals to manage stress, improve fitness, and achieve wellness goals.
+## Setup and Installation
 
-## Technical Details
-- **Programming Language**: Python
-- **Libraries and Frameworks**:
-  - `CustomTkinter`: For building a modern and aesthetic GUI.
-  - `MySQL`: Database for managing user and health data.
-  - `bcrypt`: Secure password hashing.
-- **File Structure**:
-  - `login.py`: Handles user authentication and redirection to the dashboard.
-  - `register.py`: Manages new user registration.
-  - `dashboard.py`: Provides the main interface for health tracking.
+### 1. **Clone the Repository**:
+         git clone https://github.com/lnce-dward/Dela-Rosa-Lance-Edward-V.---OOP-Final-Project.git
 
-## Installation and Usage
-### Prerequisites
-- Python 3.7 or higher.
-- MySQL database server.
-- Required Python libraries: `mysql-connector-python`, `bcrypt`, and `customtkinter`.
 
-### Setup
-1. Clone the repository or download the source files.
-2. Configure the MySQL database using the provided `mirai_db.sql` file.
-3. Install required Python libraries using:
-   ```bash
-   pip install -r requirements.txt
+### 2. **Navigate to the Project Folder**:
+         cd Dela-Rosa-Lance-Edward-V.---OOP-Final-Project
+
+### 3. **Build and Run**:
+- Open the project in your Java IDE (e.g., IntelliJ IDEA).
+- Build and run the `HealthTracker.java` file.
+
+## How to Use the Health Tracking System
+
+1. **Start the Application**: Run the `HealthTracker.java` file to start the application.
+
+2. **Register a New User**:
+   - Choose option 1 from the main menu.
+   - Enter your username, password, full name, and date of birth as prompted.
+
+3. **Login**:
+   - Choose option 2 from the main menu.
+   - Enter your username and password.
+
+4. **Using the Main Menu**:
+   After logging in, you'll see the following options:
+   1. Physical Health
+   2. Mental Health
+   3. View Physical Health History
+   4. View Mental Health History
+   5. Exit
+
+5. **Inputting Physical Health Data**:
+   - Select option 1 from the main menu.
+   - Enter your weight (in kg), height (in cm), blood pressure (systolic/diastolic), and heart rate (bpm) as prompted.
+
+6. **Inputting Mental Health Data**:
+   - Select option 2 from the main menu.
+   - Rate your mood (1-10), stress level (1-10), cognitive well-being (good/average/poor), and sleep quality (1-10) as prompted.
+
+7. **Viewing Health History**:
+   - Select option 3 to view your physical health history.
+   - Select option 4 to view your mental health history.
+
+8. **Exiting the Application**:
+   - Select option 5 from the main menu to log out.
+   - Choose option 3 from the initial menu to exit the application completely.
+
+Remember to input your health data regularly to get the most benefit from tracking your health over time.
